@@ -11,9 +11,6 @@ An UML diagram was created which contains an overview of the classes and their m
 
 ### Improvements
 - The analyzer class consists of only static methods. This can be improved by adding a field of type Board.
-- There aren't errors thrown when the wrong type is given as input
-
-
-
+- There aren't errors thrown when the wrong type is given as input.
 
 This game is based on a tutorial found in the book *The C# Player's Guide (3rd Edition)* written by *RB Whitaker* [1^] .
