@@ -10,24 +10,24 @@ namespace OXO
 
     internal class State
     {
-        private StateValues oxoState;
+        private StateValues _oxoState;
 
         public State() // The start state is X!
         {
-            oxoState = StateValues.O;            
+            _oxoState = StateValues.O;            
         }
 
         public void ChangeState() // Changes the state to the other one (X --> O, O --> X)
         {
-            if (oxoState == StateValues.X)
-                oxoState = StateValues.O;
+            if (_oxoState == StateValues.X)
+                _oxoState = StateValues.O;
             else
-                oxoState = StateValues.X;
+                _oxoState = StateValues.X;
         }
 
         public char GetValue() // Retuns the current state as a char!
         {
-            if (oxoState == StateValues.X)
+            if (_oxoState == StateValues.X)
                 return 'X';
             else
                 return 'O';                
