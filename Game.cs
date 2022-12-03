@@ -1,16 +1,16 @@
-﻿using System.Transactions;
+using System.Transactions;
 
 namespace OXO
 {
     internal class Game
     {
-        public State State { get; }
-        public Board Board { get; }
+        public State GameState { get; }
+        public Board GameBoard { get; }
 
         public Game(int size)
         {           
-            Board = new Board(size);
-            State = new State();            
+            GameBoard = new Board(size);
+            GameState = new State();            
         }
 
         public void Turn()
@@ -18,21 +18,21 @@ namespace OXO
             int rowIndex;
             int columnIndex;
 
-            State.ChangeState();
+            GameState.ChangeState();
 
             do
             {
-                Input.GetSymbol(State);
-                rowIndex = Input.GetRowIndex(Board.OxoBoard.GetLength(0)) - 1;
-                columnIndex = Input.GetColumnIndex(Board.OxoBoard.GetLength(0)) - 1;
+                Input.GetSymbol(GameState);
+                rowIndex = Input.GetRowIndex(GameBoard.OxoBoard.GetLength(0)) - 1;
+                columnIndex = Input.GetColumnIndex(GameBoard.OxoBoard.GetLength(0)) - 1;
 
-                if (Board.OxoBoard[rowIndex, columnIndex] != ' ')
+                if (GameBoard.OxoBoard[rowIndex, columnIndex] != ' ')
                     Console.WriteLine("The submitted values were wrong, please try again!");
             }
-            while (Board.OxoBoard[rowIndex, columnIndex] != ' ');
+            while (GameBoard.OxoBoard[rowIndex, columnIndex] != ' ');
             
-            Board.SetBoardValue(rowIndex, columnIndex, State);
-            Board.DrawBoard();            
+            GameBoard.SetBoardValue(rowIndex, columnIndex, GameState);
+            GameBoard.DrawBoard();            
         }        
 
         public static void Intro()
