@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -6,32 +6,31 @@ using System.Threading.Tasks;
 
 namespace OXO
 {
-    enum EnumState { X, O };
+    enum StateValues { X, O };
 
     internal class State
     {
-        EnumState oxoState;
+        private StateValues oxoState;
 
         public State() // The start state is X!
         {
-            oxoState = EnumState.O;            
+            oxoState = StateValues.O;            
         }
 
         public void ChangeState() // Changes the state to the other one (X --> O, O --> X)
         {
-            if (oxoState == EnumState.X)
-                oxoState = EnumState.O;
+            if (oxoState == StateValues.X)
+                oxoState = StateValues.O;
             else
-                oxoState = EnumState.X;
+                oxoState = StateValues.X;
         }
 
         public char GetValue() // Retuns the current state as a char!
         {
-            if (oxoState == EnumState.X)
+            if (oxoState == StateValues.X)
                 return 'X';
             else
                 return 'O';                
-        }
-        
+        }        
     }
 }
