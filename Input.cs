@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Diagnostics.Metrics;
 using System.Linq;
@@ -32,7 +32,6 @@ namespace OXO
 
             return symbol;
         }
-
         public static int GetRowIndex(int rowLimit)
         {
             int rowIndex;
